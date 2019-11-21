@@ -8,19 +8,25 @@
 
 :root {
     /* colors */
-    --color-alpha-light: MEDIUMSLATEBLUE;
-    --color-alpha: SLATEBLUE;
+    --color-alpha-x-light: #F2F2F9;
+    --color-alpha-light: #A5A4BF;
+    --color-alpha: #A3A0FB;
+    --color-alpha-dark: #4D4F5C;
+    --color-alpha-x-dark:#3B3B53;
 
-    --color-neutral-light: LIGHTSLATEGRAY;
-    --color-neutral: SLATEGRAY;
-    --color-neutral-dark: DARKSLATEGRAY;
+    --color-neutral-light: #FFFFFF;
+    --color-neutral: ;
+    --color-neutral-dark:#4D4F5C;
 
     /* Shadows */
-
+    --shadow-neutral: 0 2px 6px rgba(0,0,0, 0.04);
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /*grid ststem*/
+    --global-baseline: 5px;
 }
 
 /*------------------------------------*\
@@ -34,14 +40,14 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Sans Pro',Helvetica, arial, sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color:var(--color-alpha-x-light);
 }
 
 *,
