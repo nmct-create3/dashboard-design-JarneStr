@@ -298,6 +298,15 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 /*
+Component: icon
+---
+*/
+.c-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+/*
 Component: app
 ---
 website main layout
@@ -309,16 +318,63 @@ website main layout
 
 .c-app__logo {
   background: var(--color-alpha-x-dark);
+  display: flex;
+  align-items: center;
+  padding: calc(var(--global-baseline) * 3) calc(var(--global-baseline) * 4);
 }
 .c-app__topbar {
   background: var(--color-neutral-light);
   box-shadow: var(--shadow-neutral);
+  display: none;
 }
 .c-app__sidebar {
   background: var(--color-alpha-dark);
+  display: none;
 }
 
 .c-app__main {
+}
+
+.c-main-nav__list {
+  margin: 0;
+  padding: 0;
+}
+
+.c-main-nav__item {
+  display: flex;
+  align-items: center;
+  padding: calc(var(--global-baseline) * 3) calc(var(--global-baseline) * 4);
+  border-left: var(--global-baseline) solid transparent;
+
+  transition-duration: all ease-out 550ms;
+  transition-timing-function: ease-out;
+  transition-property: border-color, background;
+
+  cursor: pointer;
+}
+
+.c-main-nav__item.is-selected,
+.c-main-nav__item:hover {
+  background: var(--color-alpha-x-dark);
+  border-left: var(--global-baseline) solid var(--color-alpha);
+}
+
+.c-main-nav__link {
+  margin-left: calc(var(--global-baseline) * 2);
+
+  color: var(--color-neutral-light);
+  font-size: 15px;
+  line-height: 25px;
+
+  text-decoration: none;
+}
+
+.c-main-nav__link:visited {
+  color: var(--color-neutral-light);
+}
+
+.c-main-nav__item.is-selected .c-main-nav__icon {
+  fill: var(--color-alpha);
 }
 
 @media screen and (min-width: 960px) {
@@ -327,12 +383,37 @@ website main layout
     grid-template-columns: var(--layout-sidebar-width) 1fr;
     grid-template-rows: var(--layout-header-height) 1fr;
   }
+  .c-app__logo {
+    padding: calc(var(--global-baseline) * 4);
+  }
+
+  .c-app__sidebar,
+  .c-app__topbar {
+    display: block;
+  }
+
+  .c-app__sidebar,
+  .c-app__main {
+    height: calc(100vh - var(--layout-header-height));
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
+
 /*
     Component: Logo
     ---
     Website main logo
 */
+.c-logo {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-neutral-light);
+
+  line-height: calc(var(--global-baseline) * 4);
+  font-size: 1rem; /* 1rem = 1 font-size van de body*/
+}
 
 /*------------------------------------*\
 #UTILITIES
