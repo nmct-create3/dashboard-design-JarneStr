@@ -27,6 +27,9 @@
 
     /*grid ststem*/
     --global-baseline: 5px;
+
+    --layout-sidebar-width: 260px;
+    --layout-header-width: 70px;
 }
 
 /*------------------------------------*\
@@ -294,7 +297,37 @@ input::placeholder {
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+/*
+Component: app
+---
+website main layout
+*/
 
+.c-app{
+ min-height: 100vh;
+}
+
+.c-app__logo{
+background: var(--color-alpha-x-dark);
+}
+.c-app__topbar{
+background:var(--color-neutral-light);
+}
+.c-app__sidebar{
+background: var(--color-alpha-dark);
+}
+
+.c-app__main{
+
+}
+
+@media screen and( min-width: 960px){
+    .c-app{
+        display: grid;
+        grid-template-columns: ;
+        grid-template-rows: ;
+    }
+}
 /*
     Component: Logo
     ---
